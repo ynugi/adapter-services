@@ -5,7 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.YearMonth;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Slf4j
@@ -31,5 +33,10 @@ public class DateTimeUtils {
         return dateToConvert.toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
+    }
+
+    public static String convertYearMonthToString(YearMonth yearMonth, String format){
+        DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern(format);
+        return yearMonth.format(outputFormat);
     }
 }
