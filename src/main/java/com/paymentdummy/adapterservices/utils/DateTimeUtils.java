@@ -39,4 +39,5 @@ public class DateTimeUtils {
         DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern(format);
         return yearMonth.format(outputFormat);
     }
+
 }
